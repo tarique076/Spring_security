@@ -22,4 +22,6 @@ public class CustomerController {
 		
 		return new ResponseEntity<Customer>(regCustomer, HttpStatus.ACCEPTED);
 	}
+	
+	
 }
