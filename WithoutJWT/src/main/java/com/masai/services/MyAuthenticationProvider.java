@@ -12,12 +12,13 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.security.authentication.AuthenticationProvider;
 
 import com.masai.entity.Customer;
 import com.masai.repository.CustomerDAO;
 
 @Component
-public class AuthenticationProvider implements org.springframework.security.authentication.AuthenticationProvider{
+public class MyAuthenticationProvider implements AuthenticationProvider{
 
 	@Autowired
 	private CustomerDAO cDao;
