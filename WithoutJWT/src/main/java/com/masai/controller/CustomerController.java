@@ -15,7 +15,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService cService;
 	
-	@PostMapping("/customers")
+	@PostMapping("/customer")
 	public ResponseEntity<Customer> registerCustomer(Customer cust){
 		
 		Customer regCustomer = cService.registerCustomer(cust);
