@@ -22,6 +22,7 @@ public class SecurityConfig {
 		return http.build();
 	}
 	
+	/*Creating in memory user. User stored in application. Password encoder is necessary, would not work without that.*/
 	@Bean
 	public InMemoryUserDetailsManager userDetails() {
 		
