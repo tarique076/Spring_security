@@ -18,7 +18,8 @@ public class SecurityConfig {
 	public SecurityFilterChain appSecurityConfig(HttpSecurity http) throws Exception {
 		
 		http.authorizeHttpRequests((auth) -> auth.requestMatchers("/welcome", "/employee/register").permitAll()
-				.requestMatchers("/welcome/secured").authenticated()).csrf().disable().httpBasic();
+				.requestMatchers("/welcome/secured").authenticated()
+				.requestMatchers("/welcome/admin").hasRole("admin")).csrf().disable().httpBasic();
 		
 		return http.build();
 	}

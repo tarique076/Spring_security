@@ -1,9 +1,11 @@
 package com.masai.beans;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class MyUserDetails implements UserDetails{
@@ -19,7 +21,12 @@ public class MyUserDetails implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		Collection<GrantedAuthority> authority = new ArrayList<>();
+		
+		SimpleGrantedAuthority role = new SimpleGrantedAuthority(employee.getRole());
+		
+		authority.add(role);
+		return authority;
 	}
 
 	@Override

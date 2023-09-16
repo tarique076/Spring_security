@@ -17,4 +17,9 @@ public class WelcomeController {
 	public ResponseEntity<String> welcomeSecured(){
 		return new ResponseEntity<String>("Welcome with security", HttpStatus.OK);
 	}
+	
+	@GetMapping("welcome/admin")
+	public ResponseEntity<String> welcomeAdmin(){
+		return new ResponseEntity<String>("Welcome admin sir.", HttpStatus.OK);
+	}
 }
